@@ -43,6 +43,12 @@ public class BlogController {
 		return blogService.getNotesForUser(userDetails.getUsername());
 	}
 	
+	@GetMapping("/allnotes")
+	public List<Blog> getAllNotes() {
+		
+		return blogService.getAllNotes();
+	}
+	
 	@DeleteMapping("/{noteId}")
 	public void deleteUserNote(@PathVariable Long noteId,
 							   @AuthenticationPrincipal UserDetails userDetails) {

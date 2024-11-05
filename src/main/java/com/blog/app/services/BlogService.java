@@ -13,5 +13,6 @@ public interface BlogService {
 	List<Blog> getNotesForUser(String username);
 	void addComment(Long blogId, Comment comment);
 	void addLike(Long blogId, String username);
+	List<Blog> getAllNotes();
 	
 }

@@ -69,6 +69,13 @@ public class BlogServiceImpl implements BlogService {
 	}
 	
 	@Override
+	public List<Blog> getAllNotes() {
+		
+		return blogRepository.findAll();
+		
+	}
+	
+	@Override
 	public void addComment(Long blogId, Comment comment) {
         Blog blog = blogRepository.findById(blogId).orElseThrow();
         comment.setBlog(blog);
