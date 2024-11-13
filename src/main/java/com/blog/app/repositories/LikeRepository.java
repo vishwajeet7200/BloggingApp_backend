@@ -1,5 +1,6 @@
 package com.blog.app.repositories;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -13,5 +14,7 @@ import com.blog.app.models.User;
 public interface LikeRepository extends JpaRepository<BlogLike,Long> {
 
 	Optional<BlogLike> findByBlogAndUser(Blog blog, User user);
+
+	List<BlogLike> findByBlogId(Long id);
 
 }

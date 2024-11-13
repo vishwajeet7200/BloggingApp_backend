@@ -98,5 +98,18 @@ public class BlogServiceImpl implements BlogService {
         blogLike.setUser(user);
         likeRepository.save(blogLike);
     }
+
+	@Override
+	public List<Comment> fetchComment(Long noteId) {
+		// TODO Auto-generated method stub
+		return commentRepository.findByBlogId(noteId);
+	}
+
+	@Override
+	public int getTotalLike(Long id) {
+		// TODO Auto-generated method stub
+		
+		return likeRepository.findByBlogId(id).size();
+	}
 	
 }
